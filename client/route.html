@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маршруты | Транспортный навигатор</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚆</text></svg>">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <i class="fas fa-route logo-icon"></i>
+                <h1 class="app-title">Транспортный навигатор</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="route.html" class="nav-link active">
+                    <i class="fas fa-route nav-icon"></i>
+                    <span class="nav-text">Маршруты</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <section class="card route-search-card">
+            <div class="card-header">
+                <h2 class="card-title">
+                    <i class="fas fa-map-marked-alt card-icon"></i>
+                    Поиск маршрута
+                </h2>
+            </div>
+            <div class="card-body">
+                <div class="search-container">
+                    <div class="search-input-group">
+                        <div class="input-row">
+                            <label class="input-label">Отправление</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fromStation" class="search-input"
+                                    placeholder="Станция отправления" autocomplete="off">
+                                <div class="search-dropdown" id="fromSuggestions"></div>
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <label class="input-label">Прибытие</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="toStation" class="search-input" placeholder="Станция прибытия"
+                                    autocomplete="off">
+                                <div class="search-dropdown" id="toSuggestions"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="findRoute" class="primary-button">
+                        <i class="fas fa-directions btn-icon"></i>
+                        Найти маршрут
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card route-results-card">
+            <div class="card-header">
+                <h2 class="card-title">
+                    <i class="fas fa-list-ul card-icon"></i>
+                    Результаты поиска
+                </h2>
+                <div class="route-meta">
+                    <span id="routeSummary">
+                        <span id="fromStationTitle"></span> <span id="toStationTitle"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="schedule-container" id="scheduleView">
+                    <div class="empty-state">
+                        <i class="fas fa-route empty-icon"></i>
+                        <p class="empty-text">Укажите станции для поиска маршрутов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2025 Расписание электричек</p>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./route.js"></script>
+</body>
+
+</html>
